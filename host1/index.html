@@ -1,0 +1,19 @@
+<html>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<h4>web.cybersecurity.seu.edu</h4>
+<div id="date">/api/date : </div>
+<div id="datecors">/api/datecors : </div>
+<script type="text/javascript">
+	const divdatecors = document.querySelector('#datecors')
+	const rescors = fetch('http://time.cybersecurity.seu.edu/api/datecors').then(res => res.json()).then(data => {
+			divdatecors.textContent = '/api/datecors : ' + data.date
+		}
+	)
+	const divdate = document.querySelector('#date')
+	const resdate = fetch('http://time.cybersecurity.seu.edu/api/date').then(res => res.json()).then(data => {
+			divdate.textContent = '/api/date : ' + data.date
+		}
+	)
+</script>
+</body>
